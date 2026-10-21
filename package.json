@@ -1,5 +1,5 @@
 {
-  "name": "@supabase-community/vercel-ai-chatbot",
+  "name": "zomi-ai-chat",
   "version": "0.0.2",
   "private": true,
   "scripts": {

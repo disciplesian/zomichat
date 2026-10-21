@@ -70,12 +70,12 @@ export function UserMenu({ user }: UserMenuProps) {
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
             <a
-              href="https://vercel.com"
+              href="https://github.com/disciplesian/zomichat"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-between text-xs"
             >
-              Vercel Homepage
+              Zomi AI Chat on GitHub
               <IconExternalLink className="ml-auto h-3 w-3" />
             </a>
           </DropdownMenuItem>

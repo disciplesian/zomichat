@@ -10,8 +10,7 @@ import { SidebarList } from '@/components/sidebar-list'
 import {
   IconGitHub,
   IconNextChat,
-  IconSeparator,
-  IconVercel
+  IconSeparator
 } from '@/components/ui/icons'
 import { SidebarFooter } from '@/components/sidebar-footer'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -36,12 +35,12 @@ export async function Header() {
               <ClearHistory clearChats={clearChats} />
             </SidebarFooter>
           </Sidebar>
-        ) : (
-          <Link href="/" target="_blank" rel="nofollow">
-            <IconNextChat className="mr-2 h-6 w-6 dark:hidden" inverted />
-            <IconNextChat className="mr-2 hidden h-6 w-6 dark:block" />
-          </Link>
-        )}
+        ) : null}
+        <Link href="/" className="flex items-center">
+          <IconNextChat className="mr-2 h-6 w-6 dark:hidden" inverted />
+          <IconNextChat className="mr-2 hidden h-6 w-6 dark:block" />
+          <span className="font-semibold">Zomi AI Chat</span>
+        </Link>
         <div className="flex items-center">
           <IconSeparator className="h-6 w-6 text-muted-foreground/50" />
           {session?.user ? (
@@ -56,21 +55,12 @@ export async function Header() {
       <div className="flex items-center justify-end space-x-2">
         <a
           target="_blank"
-          href="https://github.com/thorwebdev/vercel-ai-chatbot"
+          href="https://github.com/disciplesian/zomichat"
           rel="noopener noreferrer"
           className={cn(buttonVariants({ variant: 'outline' }))}
         >
           <IconGitHub />
-          <span className="ml-2 hidden md:flex">GitHub</span>
-        </a>
-        <a
-          href="https://github.com/thorwebdev/vercel-ai-chatbot"
-          target="_blank"
-          className={cn(buttonVariants())}
-        >
-          <IconVercel className="mr-2" />
-          <span className="hidden sm:block">Deploy to Vercel</span>
-          <span className="sm:hidden">Deploy</span>
+          <span className="ml-2 hidden md:flex">Zomi AI Chat</span>
         </a>
       </div>
     </header>

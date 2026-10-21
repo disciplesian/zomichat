@@ -10,12 +10,6 @@ import { nanoid } from '@/lib/utils'
 
 export const runtime = 'edge'
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY
-})
-
-const openai = new OpenAIApi(configuration)
-
 export async function POST(req: Request) {
   const cookieStore = cookies()
   const supabase = createRouteHandlerClient<Database>({
@@ -31,9 +25,11 @@ export async function POST(req: Request) {
     })
   }
 
-  if (previewToken) {
-    configuration.apiKey = previewToken
-  }
+  const openai = new OpenAIApi(
+    new Configuration({
+      apiKey: previewToken || process.env.OPENAI_API_KEY
+    })
+  )
 
   const res = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',

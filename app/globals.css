@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      'Liberation Mono', 'Courier New', monospace;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
